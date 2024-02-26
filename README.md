@@ -27,7 +27,7 @@ Ao final de cada sessão, você receberá um alerta sonoro e visual.
 
 Demo
 
-Você pode acessar uma demo do TaskTime Pro aqui.
+Você pode acessar uma demo do TaskTime Pro no link https://dvalenascimento.github.io/tasktime_pro/.
 
 
 Contribuindo
