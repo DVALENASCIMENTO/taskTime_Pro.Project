@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskTime Pro</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Arquivo CSS para estilos -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    
+</head>
+<body>
+    <header>
+        <h1>TaskTime Pro</h1>
+    </header>
+    <main>
+        
+        <div class="pomodoro-timer">
+            <h2>Temporizador Pomodoro</h2>
+            <div class="timer-container">
+                <div id="time-circle" class="timer-circle">
+                    <div class="timer-bar"></div>
+                </div>
+                <div class="timer-display" id="timer">25:00</div>
+            </div>
+            <div class="progress-bar-container">
+    <div class="progress-bar"></div>
+</div>
+
+            <div class="timer-buttons">
+                <button id="start-btn">Iniciar</button>
+                <button id="pause-btn">Pausar</button>
+                <button id="reset-btn">Resetar</button>
+            </div>
+        </div>
+        <div class="task-list">
+            <h2>Lista de Tarefas</h2>
+            <ul id="task-list">
+                <!-- Aqui serão inseridas as tarefas dinamicamente via JavaScript -->
+            </ul>
+            <input type="text" id="task-input" placeholder="Adicionar nova tarefa">
+            <button id="add-task-btn">Adicionar Tarefa</button>
+        </div>
+    </main>
+    <section class="contacts">
+        <ul class="contacts-list">
+            <li><a href="http://www.linkedin.com/in/diego-vale-do-nascimento-48212215b/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/DVALENASCIMENTO" target="_blank">GitHub</a></li>
+            <li><a href="mailto:devalecode@gmail.com">Gmail</a></li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p>Diego Nascimento</p>   
+        <p>Tecnólogo em Análise e Desenvolvimento de Sistemas</p>
+    </footer>
+    <script src="js/script.js"></script> <!-- Arquivo JavaScript para funcionalidades -->
+</body>
+</html>

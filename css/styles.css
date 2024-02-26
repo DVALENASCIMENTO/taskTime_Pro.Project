@@ -1,0 +1,218 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #04021f; /* Cor de fundo escura */
+    color: #fff; /* Cor do texto */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(to bottom, #1f12ca, #040f74, #070338, #040220); /* Gradiente de cores quentes para simular o entardecer */
+    padding: 20px 0; /* Adiciona um espaço interno ao cabeçalho */
+    text-align: center; /* Centraliza o conteúdo do cabeçalho */
+    color: white; /* Define a cor do texto como branco para melhor legibilidade */
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif; /* Escolha a fonte arredondada desejada */
+    font-size: 48px; /* Tamanho da fonte */
+    background: linear-gradient(to bottom, #a0dfe7 50%, #dba340 50%); /* Gradiente de cor de vidro para cor de areia */
+    -webkit-background-clip: text; /* Clip de texto para aplicar o gradiente de fundo */
+    background-clip: text;
+    color: transparent; /* Torna o texto transparente para mostrar o gradiente */
+    margin: 0; /* Remova as margens padrão */
+}
+
+main {
+    background: linear-gradient(to bottom, #010120, #020422); /* Gradiente de azul escuro para azul mais claro */
+    padding: 20px; /* Adiciona um espaço interno ao main */
+    color: white; /* Define a cor do texto como branco para melhor legibilidade */
+}
+
+/* Estilos da lista de tarefas */
+.task-list {
+    background-color: #010120; /* Cor de fundo da lista de tarefas */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    margin-top: 0;
+
+    text-align: center;
+}
+
+.task-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-list li {
+    margin-bottom: 10px;
+}
+
+/* Estilos para o campo de entrada de texto */
+#task-input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para o botão "Adicionar Tarefa" */
+#add-task-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilizar o botão quando o cursor passar por cima */
+#add-task-btn:hover {
+    background-color: #45a049;
+}
+
+
+
+/* Estilos do temporizador Pomodoro */
+.pomodoro-timer {
+    background-color: #010120; /* Cor de fundo do temporizador */
+    padding: 20px;
+    border-radius: 10px;
+    position: relative; /* Adicionado para que o círculo esteja posicionado corretamente */
+}
+
+.timer-container {
+    position: relative;
+    width: 200px; /* Largura do temporizador */
+    height: 200px; /* Altura do temporizador */
+    margin: 0 auto;
+}
+
+.timer-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 5px solid #5ce1f8; /* Adiciona uma borda ao redor do círculo */
+    border-radius: 50%; /* Para tornar o elemento redondo */
+    box-sizing: border-box; /* Inclui a espessura da borda no tamanho total do elemento */
+    overflow: hidden; /* Oculta qualquer conteúdo que saia do círculo */
+    animation: pulse 1s infinite alternate; /* Animação de pulsação do brilho */
+    box-shadow: 
+        /* Sombra inicial com brilho máximo */
+        0 0 20px 5px #fff,
+        /* Sombra secundária sem brilho */
+        0 0 0 0 transparent; /* A segunda sombra é inicializada como transparente */
+}
+
+@keyframes pulse {
+    from {
+        /* Brilho máximo */
+        box-shadow: 
+            0 0 20px 5px #fff,
+            0 0 0 0 transparent; 
+    }
+    to {
+        /* Brilho reduzido */
+        box-shadow: 
+            0 0 10px 2px #fff,
+            0 0 0 0 transparent; 
+    }
+}
+
+.timer-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    clip-path: circle(50% at center); /* Define o centro do círculo como transparente */
+    background: conic-gradient(#F44336 calc(var(--progress) * 3.6deg), transparent calc(var(--progress) * 3.6deg)); /* Gradiente cônico para colorir apenas a borda do círculo */
+    transition: var(--transition, none); /* Transição suave da cor */
+}
+
+.timer-display {
+    position: relative;
+    z-index: 1; /* Certifica-se de que o temporizador fica na frente do círculo */
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    line-height: 200px; /* Centraliza verticalmente o texto */
+}
+
+.timer-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.timer-buttons button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.timer-buttons button:hover {
+    background-color: #45a049;
+}
+
+.timer-buttons button:disabled {
+    background-color: #45a049;
+    cursor: not-allowed;
+}
+
+/* Estilos para a seção de contatos */
+.contacts {
+    background-color: #010120v; /* Cor de fundo */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+}
+
+.contacts-list {
+    list-style-type: none; /* Remove os marcadores de lista */
+    padding: 0; /* Remove o preenchimento padrão da lista */
+}
+
+.contacts-list li {
+    display: inline-block; /* Exibe os itens da lista em linha */
+    margin-right: 10px; /* Adiciona espaço entre os itens da lista */
+}
+
+.contacts-list li:last-child {
+    margin-right: 0; /* Remove a margem à direita do último item da lista */
+}
+
+.contacts-list a {
+    text-decoration: none; /* Remove a decoração de link */
+    color: #333; /* Cor do texto */
+    font-weight: bold; /* Negrito */
+}
+
+.contacts-list a:hover {
+    color: #007bff; /* Cor do texto ao passar o mouse sobre o link */
+}
+
+/* Estilos para o rodapé */
+footer {
+    background-color: #010120; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+}
+
