@@ -1,8 +1,8 @@
-/* Estilos gerais */
+/* Adicione seu CSS aqui */
 body {
     font-family: Arial, sans-serif;
-    background-color: #04021f; /* Cor de fundo escura */
-    color: #fff; /* Cor do texto */
+    background-color: #04021f;
+    color: #fff;
     margin: 0;
     padding: 0;
 }
@@ -10,38 +10,36 @@ body {
 header {
     text-align: center;
     padding: 20px 0;
-    background: linear-gradient(to bottom, #1f12ca, #040f74, #070338, #040220); /* Gradiente de cores quentes para simular o entardecer */
-    padding: 20px 0; /* Adiciona um espaço interno ao cabeçalho */
-    text-align: center; /* Centraliza o conteúdo do cabeçalho */
-    color: white; /* Define a cor do texto como branco para melhor legibilidade */
+    background: linear-gradient(to bottom, #1f12ca, #040f74, #070338, #040220);
+    padding: 20px 0;
+    text-align: center;
+    color: white;
 }
 
 h1 {
-    font-family: 'Poppins', sans-serif; /* Escolha a fonte arredondada desejada */
-    font-size: 48px; /* Tamanho da fonte */
-    background: linear-gradient(to bottom, #a0dfe7 50%, #dba340 50%); /* Gradiente de cor de vidro para cor de areia */
-    -webkit-background-clip: text; /* Clip de texto para aplicar o gradiente de fundo */
+    font-family: 'Poppins', sans-serif;
+    font-size: 48px;
+    background: linear-gradient(to bottom, #a0dfe7 50%, #dba340 50%);
+    -webkit-background-clip: text;
     background-clip: text;
-    color: transparent; /* Torna o texto transparente para mostrar o gradiente */
-    margin: 0; /* Remova as margens padrão */
+    color: transparent;
+    margin: 0;
 }
 
 main {
-    background: linear-gradient(to bottom, #010120, #020422); /* Gradiente de azul escuro para azul mais claro */
-    padding: 20px; /* Adiciona um espaço interno ao main */
-    color: white; /* Define a cor do texto como branco para melhor legibilidade */
+    background: linear-gradient(to bottom, #010120, #020422);
+    padding: 20px;
+    color: white;
 }
 
-/* Estilos da lista de tarefas */
 .task-list {
-    background-color: #010120; /* Cor de fundo da lista de tarefas */
+    background-color: #010120;
     padding: 20px;
     border-radius: 10px;
 }
 
 h2 {
     margin-top: 0;
-
     text-align: center;
 }
 
@@ -54,7 +52,6 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* Estilos para o campo de entrada de texto */
 #task-input {
     width: 300px;
     padding: 10px;
@@ -64,7 +61,6 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* Estilos para o botão "Adicionar Tarefa" */
 #add-task-btn {
     padding: 10px 20px;
     font-size: 16px;
@@ -75,25 +71,21 @@ h2 {
     cursor: pointer;
 }
 
-/* Estilizar o botão quando o cursor passar por cima */
 #add-task-btn:hover {
     background-color: #45a049;
 }
 
-
-
-/* Estilos do temporizador Pomodoro */
 .pomodoro-timer {
-    background-color: #010120; /* Cor de fundo do temporizador */
+    background-color: #010120;
     padding: 20px;
     border-radius: 10px;
-    position: relative; /* Adicionado para que o círculo esteja posicionado corretamente */
+    position: relative;
 }
 
 .timer-container {
     position: relative;
-    width: 200px; /* Largura do temporizador */
-    height: 200px; /* Altura do temporizador */
+    width: 200px;
+    height: 200px;
     margin: 0 auto;
 }
 
@@ -103,27 +95,23 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    border: 5px solid #5ce1f8; /* Adiciona uma borda ao redor do círculo */
-    border-radius: 50%; /* Para tornar o elemento redondo */
-    box-sizing: border-box; /* Inclui a espessura da borda no tamanho total do elemento */
-    overflow: hidden; /* Oculta qualquer conteúdo que saia do círculo */
-    animation: pulse 1s infinite alternate; /* Animação de pulsação do brilho */
+    border: 5px solid #5ce1f8;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    animation: pulse 1s infinite alternate;
     box-shadow: 
-        /* Sombra inicial com brilho máximo */
         0 0 20px 5px #fff,
-        /* Sombra secundária sem brilho */
-        0 0 0 0 transparent; /* A segunda sombra é inicializada como transparente */
+        0 0 0 0 transparent;
 }
 
 @keyframes pulse {
     from {
-        /* Brilho máximo */
         box-shadow: 
             0 0 20px 5px #fff,
             0 0 0 0 transparent; 
     }
     to {
-        /* Brilho reduzido */
         box-shadow: 
             0 0 10px 2px #fff,
             0 0 0 0 transparent; 
@@ -137,19 +125,19 @@ h2 {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    clip-path: circle(50% at center); /* Define o centro do círculo como transparente */
-    background: conic-gradient(#F44336 calc(var(--progress) * 3.6deg), transparent calc(var(--progress) * 3.6deg)); /* Gradiente cônico para colorir apenas a borda do círculo */
-    transition: var(--transition, none); /* Transição suave da cor */
+    clip-path: circle(50% at center);
+    background: conic-gradient(#F44336 calc(var(--progress) * 3.6deg), transparent calc(var(--progress) * 3.6deg));
+    transition: var(--transition, none);
 }
 
 .timer-display {
     position: relative;
-    z-index: 1; /* Certifica-se de que o temporizador fica na frente do círculo */
+    z-index: 1;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
     color: rgb(255, 255, 255);
-    line-height: 200px; /* Centraliza verticalmente o texto */
+    line-height: 200px;
 }
 
 .timer-buttons {
@@ -177,42 +165,39 @@ h2 {
     cursor: not-allowed;
 }
 
-/* Estilos para a seção de contatos */
 .contacts {
-    background-color: #010120v; /* Cor de fundo */
-    padding: 20px; /* Espaçamento interno */
-    text-align: center; /* Alinhamento do texto */
+    background-color: #010120;
+    padding: 20px;
+    text-align: center;
 }
 
 .contacts-list {
-    list-style-type: none; /* Remove os marcadores de lista */
-    padding: 0; /* Remove o preenchimento padrão da lista */
+    list-style-type: none;
+    padding: 0;
 }
 
 .contacts-list li {
-    display: inline-block; /* Exibe os itens da lista em linha */
-    margin-right: 10px; /* Adiciona espaço entre os itens da lista */
+    display: inline-block;
+    margin-right: 10px;
 }
 
 .contacts-list li:last-child {
-    margin-right: 0; /* Remove a margem à direita do último item da lista */
+    margin-right: 0;
 }
 
 .contacts-list a {
-    text-decoration: none; /* Remove a decoração de link */
-    color: #333; /* Cor do texto */
-    font-weight: bold; /* Negrito */
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
 }
 
 .contacts-list a:hover {
-    color: #007bff; /* Cor do texto ao passar o mouse sobre o link */
+    color: #00f2ff;
 }
 
-/* Estilos para o rodapé */
 footer {
-    background-color: #010120; /* Cor de fundo */
-    color: #fff; /* Cor do texto */
-    padding: 20px; /* Espaçamento interno */
-    text-align: center; /* Alinhamento do texto */
+    background-color: #010120;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
 }
-
