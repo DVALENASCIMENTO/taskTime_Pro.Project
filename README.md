@@ -2,6 +2,7 @@
 
 TaskTime Pro
 
+https://dvalenascimento.github.io/taskTime_Pro.Project/
 TaskTime Pro é uma aplicação de temporizador Pomodoro desenvolvida para ajudar na gestão do tempo e na melhoria da produtividade. Utilizando o método Pomodoro, a aplicação permite aos usuários dividir seu tempo em períodos de trabalho focado e pausas regulares, ajudando a manter um ritmo de trabalho eficiente e evitar o esgotamento.
 
 Funcionalidades
@@ -19,7 +20,7 @@ JavaScript
 
 Como Utilizar
 
-Clone este repositório: git clone https://github.com/seu-usuario/tasktime-pro.git
+Clone este repositório: git clone https://github.com/DVALENASCIMENTO/taskTime_Pro.Project
 Abra o arquivo index.html em seu navegador.
 Adicione suas tarefas na lista e clique em "Iniciar" para começar o temporizador Pomodoro.
 Aproveite sua sessão de trabalho focado!
@@ -27,7 +28,7 @@ Ao final de cada sessão, você receberá um alerta sonoro e visual.
 
 Demo
 
-Você pode acessar uma demo do TaskTime Pro no link https://dvalenascimento.github.io/tasktime_pro/.
+Você pode acessar uma demo do TaskTime Pro no link https://dvalenascimento.github.io/taskTime_Pro.Project/.
 
 
 Contribuindo
