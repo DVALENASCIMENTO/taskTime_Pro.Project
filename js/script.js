@@ -17,31 +17,75 @@ let sessionCount = 0;
 // Função para carregar tarefas do LocalStorage
 function loadTasks() {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    tasks.forEach(task => addTaskToDOM(task));
+    tasks.forEach(task => addTaskToDOM(task.text, task.completed));
 }
 
 // Função para salvar tarefas no LocalStorage
 function saveTasks() {
     const tasks = [];
     taskList.querySelectorAll('li').forEach(taskItem => {
-        tasks.push(taskItem.textContent.trim());
+        tasks.push({
+            text: taskItem.querySelector('span').textContent.trim(),
+            completed: taskItem.querySelector('input[type="checkbox"]').checked
+        });
     });
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 // Função para adicionar tarefa ao DOM
-function addTaskToDOM(taskText) {
+function addTaskToDOM(taskText, completed = false) {
     const taskItem = document.createElement('li');
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
+    checkbox.checked = completed;
+
     const taskSpan = document.createElement('span');
     taskSpan.textContent = taskText;
 
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'X';
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.style.backgroundColor = 'red';
+    deleteBtn.style.color = 'white';
+    deleteBtn.style.border = 'none';
+    deleteBtn.style.padding = '5px 10px';
+    deleteBtn.style.fontSize = '14px';
+    deleteBtn.style.cursor = 'pointer';
+    deleteBtn.style.borderRadius = '5px';
+    deleteBtn.style.marginLeft = '10px';
+    deleteBtn.style.display = 'none'; // Inicialmente oculto
+
     taskItem.appendChild(checkbox);
     taskItem.appendChild(taskSpan);
+    taskItem.appendChild(deleteBtn);
     taskList.appendChild(taskItem);
 
+    if (completed) {
+        taskItem.classList.add('completed');
+        deleteBtn.style.display = 'inline-block';
+    }
+
     saveTasks();
+
+    // Event listener para mover a tarefa para o final se for marcada como concluída
+    checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+            taskItem.classList.add('completed');
+            deleteBtn.style.display = 'inline-block'; // Exibe o botão "X"
+            taskList.appendChild(taskItem); // Move o item para o final da lista
+        } else {
+            taskItem.classList.remove('completed');
+            deleteBtn.style.display = 'none'; // Oculta o botão "X"
+            taskList.insertBefore(taskItem, taskList.firstChild); // Move o item para o início da lista
+        }
+        saveTasks();
+    });
+
+    // Event listener para remover a tarefa
+    deleteBtn.addEventListener('click', () => {
+        taskList.removeChild(taskItem);
+        saveTasks();
+    });
 }
 
 // Função para adicionar tarefa
@@ -141,6 +185,13 @@ addTaskBtn.addEventListener('click', addTask);
 startBtn.addEventListener('click', startTimer);
 pauseBtn.addEventListener('click', pauseTimer);
 resetBtn.addEventListener('click', resetTimer);
+
+// Adicionando event listener ao campo de entrada para detectar a tecla Enter
+taskInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        addTask();
+    }
+});
 
 // Carregando tarefas e estado do temporizador ao carregar a página
 window.addEventListener('load', () => {
